@@ -1,15 +1,15 @@
 # =============================================================================
-# BACKEND – Platzhalter-Dockerfile
+# BACKEND – placeholder Dockerfile
 # =============================================================================
-# Vertrag mit dem Deployment-Repo:
-#   - Container lauscht auf Port 8080
-#   - alle Routen liegen unter /api/...  (der Proxy reicht den Pfad unverändert durch)
-#   - GET /api/health antwortet mit 200 (wird für den Healthcheck genutzt)
-#   - Konfiguration kommt über Umgebungsvariablen (z.B. DATABASE_URL)
+# Contract with the deployment repo:
+#   - container listens on port 8080
+#   - all routes live under /api/...  (the proxy passes the path through unchanged)
+#   - GET /api/health responds with 200 (used for the healthcheck)
+#   - configuration comes from environment variables (e.g. DATABASE_URL)
 #
-# Aktuell: winziger busybox-Webserver, der nur /api/health beantwortet.
+# Currently: tiny busybox web server that only answers /api/health.
 #
-# --- Beispiel Node/Express: --------------------------------------------------
+# --- Example Node/Express: ---------------------------------------------------
 # FROM node:22-alpine
 # WORKDIR /app
 # COPY package*.json ./
@@ -18,7 +18,7 @@
 # EXPOSE 8080
 # CMD ["node", "src/index.js"]
 #
-# --- Beispiel Python/FastAPI: ------------------------------------------------
+# --- Example Python/FastAPI: -------------------------------------------------
 # FROM python:3.13-slim
 # WORKDIR /app
 # COPY requirements.txt .

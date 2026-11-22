@@ -1,20 +1,24 @@
 # Backend
 
-Platzhalter-Repo. Die Technologie ist noch offen – das Deployment ist schon fertig.
+Placeholder repo. The technology is still open – the deployment is already done.
 
-## Vertrag
+## Contract
 
-| Regel | Wert |
+| Rule | Value |
 |---|---|
-| Container-Port | `8080` |
-| Routen-Präfix | `/api` (z.B. `/api/users`) |
+| Container port | `8080` |
+| Route prefix | `/api` (e.g. `/api/users`) |
 | Healthcheck | `GET /api/health` → HTTP 200 |
-| Datenbank | über `DATABASE_URL` (Env-Variable, kommt aus dem Deployment-Repo) |
+| Database | via `DATABASE_URL` (env variable, provided by the deployment repo) |
 
-## Loslegen
+## Getting started
 
-1. `placeholder/` löschen
-2. Framework deiner Wahl einrichten (Express, FastAPI, Spring, Go, …)
-3. Im `Dockerfile` das passende Beispiel aktivieren
-4. `/api/health` implementieren
-5. Push auf `main` → Image `ghcr.io/<orga>/<repo>:latest` wird gebaut
+1. Delete `placeholder/`
+2. Set up the framework of your choice (Express, FastAPI, Spring, Go, …)
+3. Enable the matching example in the `Dockerfile`
+4. Implement `/api/health`
+5. Push to `main` → image `ghcr.io/<org>/<repo>:latest` gets built
+
+---
+
+This template was built with the help of [Claude](https://claude.ai) by Anthropic.

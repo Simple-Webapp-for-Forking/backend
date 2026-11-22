@@ -1,6 +1,6 @@
-# Baut bei jedem Push auf main (und bei Tags v*) ein Docker-Image
-# und pusht es nach ghcr.io/<orga>/<repo>.
-# Funktioniert in jedem Fork/Template-Klon ohne Anpassung.
+# Builds a Docker image on every push to main (and on tags v*)
+# and pushes it to ghcr.io/<org>/<repo>.
+# Works in every fork/template copy without changes.
 name: Build & Push Image
 
 on:
@@ -47,9 +47,9 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      # Optional: Deployment-Repo benachrichtigen -> automatischer Redeploy.
-      # Braucht ein Secret DEPLOY_DISPATCH_TOKEN (PAT mit repo-Rechten auf das Deployment-Repo)
-      # und die Variable DEPLOYMENT_REPO (z.B. "meine-orga/deployment").
+      # Optional: notify the deployment repo -> automatic redeploy.
+      # Requires a secret DEPLOY_DISPATCH_TOKEN (PAT with repo access to the deployment repo)
+      # and the variable DEPLOYMENT_REPO (e.g. "my-org/deployment").
       - name: Trigger deployment
         if: github.ref == 'refs/heads/main' && vars.DEPLOYMENT_REPO != ''
         env:
